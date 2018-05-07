@@ -1,0 +1,96 @@
+<html lang="en">
+<head> 
+<title>Login Page</title> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  </head>
+<style>
+#vertical{
+height: 320px;
+border-left: 1px solid black;
+position: absolute;
+top: 50px;
+left: 250px;text-align:center;
+}body{border-style:double;
+background-color:gray;
+border-width: thick;
+border-width: 20px;
+}
+
+#r{
+position:relative;
+top: 130px;
+left: -20px;
+}
+</style>
+<body>
+<form>
+<div class="container-fluid" >     
+<div class="row">  
+<div class="col-sm-1">      
+</div>         
+<div class="col-sm-11">      
+<p><font size="6px"> Login </font>
+<font size="3px" style="margin-left:10px;margin-right:10px;"> or</font>
+<a href="RegisterDisplay.do" class="url" style="color:white;"><u> Register a new Account</u></a></p>    
+</div>         
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>        
+<div class="row">       
+<div class="col-sm-1">     
+</div>           
+<div class="col-sm-3">     
+<p><b><h3>Forgot Password?</h3></b></p>        
+</br>           
+</br>     
+<label for="email">Email ID<font color="red">*</font></label> 
+
+<input class="form-control" id="email" type="text" placeholder="****@****.com">   
+</br> 
+<h3 id='result'></h3>    
+<h3><span class="label label-default"><button type='submit' id='validate'>Email Password</button></span></h3>  
+</div>     
+<div class="col-sm-4">     
+<div id="vertical">        
+<span class="badge" id="r"><h4>OR</h4></span>
+</div>      
+</div>          
+<div class="col-sm-4" >     
+<p><b><h3>Have a Facebook Account?</h3></b></p>      
+</br>
+</br>
+</br>        
+<button type="button" class="btn btn-primary"><span class="badge"><b>f</b></span> Login with Facebook</button>
+</form>  
+</div>  
+</div>
+</div>
+<Script> 
+function validateEmail(email) { 
+var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  return re.test(email);}
+function validate() { 
+var $result = $("#result"); 
+var email = $("#email").val();  $result.text("");
+
+  if (validateEmail(email)) { 
+  $result.text(email + " is valid :)");  
+  $result.css("color", "green"); 
+  }
+  else
+  {  
+  $result.text(email + " is not valid :("); 
+  $result.css("color", "red"); 
+  } 
+  return false;
+  }
+$("#validate").bind("click", validate);
+</script>
+</body>
+</html>
